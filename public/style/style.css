@@ -1,0 +1,65 @@
+body{
+        background-color: darkgoldenrod;
+}
+.belowSection{
+    margin-top: 20px;
+}
+
+.venuSection{
+
+  
+
+}
+.venue{
+    border: 1px solid grey;
+    float: left;
+    margin: 8px;
+    width: auto;
+    height: auto;
+    padding: 8px;
+     background: lightgrey;
+
+}
+
+.venue img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.venuimage{
+max-width: 170px;
+float:left;
+height: auto;
+
+}
+
+.venuVist{
+    text-align: center;
+cursor: pointer;
+}
+
+venuRest{
+
+    float: right;
+}
+.venuRest>div{
+padding-left: 10px;
+}
+.categoryDisplay{
+
+height: 100%;
+
+     border: 1ps solid black;
+
+}
+
+.eachCategory{
+    padding-left: 2px;
+    cursor: pointer;
+    margin: 2px;
+       background-color: lightgreen;
+           opacity: .5; 
+        color: black;
+    font-size: medium;
+    font-style: 600;
+}

@@ -1,0 +1,78 @@
+<section class="searchSection">
+    <form>
+        <fieldset>
+            <legend>Search</legend>
+            <label for="location">Location</label>
+            <select class="form-control" id="location">
+                <option ng-repeat="location in allLocation" ng-click="searchBy.location = location.id">{{location.name|uppercase}}
+                </option>
+            </select>
+
+            <label for="category">category</label>
+            <select class="form-control" id="category">
+                <option ng-repeat="category in allCategory" ng-click="addCategory(category.id)">
+                    {{category.name|uppercase}}
+                    <!-- <input type="checkbox" ng-checked="findCategory(category.id)"/> -->
+                </option>
+            </select>
+
+            <button type="submit" class="btn btn-default" ng-click="searchResult()">Search</button>
+        </fieldset>
+    </form>
+
+</section>
+
+<aside class="row belowSection">
+    <section class="pull-left col-lg-2 col-md-2 col-sm-2 col-xs-2">
+        <div class="categoryDisplay">
+            <div class="eachCategory" ng-click="filterResult()">
+                All Category
+            </div>
+            <div class="eachCategory" ng-repeat="category in allCategory" ng-click="filterResult(category.id)">
+                {{category.name|uppercase}}
+            </div>
+
+    </section>
+
+    <section class="col-lg-10 col-md-10 col-sm-10 col-xs-10 pull-right">
+        <!--
+            <section>
+                <h5>Filter By<h5>
+                    <input ng-model="filterBy.category" placeholder="Sub Category">
+                                        <input ng-model="filterBy.ratting" placeholder="Ratting">
+                </section>
+<hr/>
+                         <section>
+                <h5>Order By<h5>
+                Name : <span ng-click="orderBy.name==1">Asc</span>
+                      <span  ng-click="orderBy.name==2">Dsc</span> 
+
+                </section>
+                -->
+
+        <div class="venuSection row pull-left">
+            <div class="venue col-lg-3 col-md-3 col-sm-6 col-xs-12" ng-repeat="item in items">
+                <div class="venuimage">
+                    <img class="userImage" ng-src="{{item.image||defaultImage}}" alt="" />
+                </div>
+                <div class="venuRest">
+
+                    <div class="userName" ng-bind="item.name|uppercase"></div>
+                    <div class="">
+                        <label> Price:</label>
+                        <span ng-bind="item.price|currency"></span>
+                    </div>
+                    <div class="">
+                        <label> Ratting:</label>
+                        <span ng-bind="item.marks"></span>
+                    </div>
+                    <div class="venuVist" ng-click="venueShow(item)">
+                        <a ng-href="{{item.url}}" target="_blank" class="userDetails">
+                      Visit Us
+                       </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section 
+    </aside>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <base href="/">
+    <meta charset="utf-8">
+    <title>DBS 2</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./public/style/style.css">
+</head>
+
+<body>
+    <div class="container" ng-app="mymodal">
+        <div id="pageHeader" ng-controller="MainCtrl" class="container">
+            <div ng-if="view=='page1'" ng-include src="'./public/page/page1.html'">
+
+            </div>
+            <div ng-if="view=='page2'" ng-include src="'./public/page/page2.html'">
+            </div>
+                        <modal visible="venue">
+                <div ng-include src="'./public/page/venue.html'">
+                </div>
+            </modal>
+            <modal visible="showSignUpModal">
+                <div ng-include src="'./public/page/signup.html'">
+                </div>
+            </modal>
+
+            <modal visible="showSignInModal">
+                <div ng-include src="'./public/page/signin.html'">
+                </div>
+            </modal>
+
+        </div>
+    </div>
+
+    <script src="./public/script/angular.min.js"></script>
+    <script src="./public/script/script.js"></script>
+    <script src="./public/script/directive.js"></script>
+        <script src="./public/script/service.js"></script>
+    <script src="./public/script/factory.js"></script>
+</body>
+
+</html>
