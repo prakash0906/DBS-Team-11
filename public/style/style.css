@@ -61,3 +61,9 @@ height: 100%;
     font-size: medium;
     font-style: 600;
 }
+
+
+.invalid{
+    color: red;
+    margin: 8px;
+}

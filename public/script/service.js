@@ -22,6 +22,22 @@ return items;
 
       }) ;
     }
-    };
+};
+
+this.validateSignUpPage=function(data){
+var bInvalid=true;
+var oValidityStatus={};
+for(var eachKey in data){
+  
+    bInvalid = bInvalid &&  !!data[eachKey];
+    oValidityStatus[eachKey]=!!data[eachKey];
+        
+    
+}
+bInvalid = bInvalid && data.pwd == data.confirmPwd;
+oValidityStatus['confirmPwd']= oValidityStatus['confirmPwd'] &&  data.pwd == data.confirmPwd;
+console.log('validity status',oValidityStatus);
+return bInvalid;
+};
 
 });

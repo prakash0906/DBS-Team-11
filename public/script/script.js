@@ -5,7 +5,13 @@ mymodal.controller('MainCtrl', function ($scope,$http,$log,myService,myFactory) 
   
   $scope.initAll=function(){
   $scope.position={};
-  $scope.userInfo={};
+  $scope.userInfo={
+    username:'',
+    hometown:'',
+    email:'',
+    pwd:'',
+    confirmPwd:''
+  };
   $scope.defaultImage="./public/image/default_hotel.jpg";
   $scope.items =myFactory.getItems();
   $scope.allLocation = myFactory.getLocation();
@@ -15,7 +21,7 @@ mymodal.controller('MainCtrl', function ($scope,$http,$log,myService,myFactory) 
     category:[],
     subcategory:[]
   };
-
+$scope.validate=true;
 //1: Asc
   $scope.orderBy={
      subcategory:1,
@@ -55,6 +61,8 @@ $scope.venueShow= function(item){
   $scope.selectedVenu =item;
 
 };
+
+
 
 $scope.venuRattingChange =function(){
   if($scope.selectedVenu.ratting<1){
@@ -112,6 +120,11 @@ console.log($scope.searchBy);
         }
     };
         $scope.submit = function(valueType){
+          if(valueType=='signup'){
+$scope.validate = myService.validateSignUpPage($scope.userInfo);
+          }
+          if(valueType=='signup'?$scope.validate:true )
+          {
 
  
       var req = {
@@ -161,7 +174,7 @@ console.log(data);
          $scope.showSignInModal = false;
      $scope.venue=false;
     };
-
+}
   });
 
 
