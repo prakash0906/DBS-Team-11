@@ -5,12 +5,8 @@
 <h4>Venu Name :  {{selectedVenu.name}}</h4>
 
     <div class="form-group">
-        <label for="Kindly rate us">Confirm Password:</label>
-        <input type="number" maxlength="10" minlength="1" class="form-control" id="confirmPwd" ng-model="selectedVenu.marks">
+        <label for="Kindly rate us">Please Rate us:</label>
+        <input type="number" class="form-control" id="ratting" ng-model="selectedVenu.ratting" ng-change="venuRattingChange()">
     </div>
 
-    <div class="checkbox">
-        <label>
-            <input type="checkbox"> Remember me</label>
-    </div>
     <button type="submit" class="btn btn-default" ng-click="submit('venue')">Submit</button>

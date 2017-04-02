@@ -2,9 +2,11 @@ var mymodal = angular.module('mymodal', []);
 
 
 mymodal.controller('MainCtrl', function ($scope,$http,$log,myService,myFactory) {
+  
+  $scope.initAll=function(){
   $scope.position={};
   $scope.userInfo={};
-  $scope.defaultImage="./public/image/default_profile.jpg";
+  $scope.defaultImage="./public/image/default_hotel.jpg";
   $scope.items =myFactory.getItems();
   $scope.allLocation = myFactory.getLocation();
   $scope.allCategory = myFactory.getCategory();
@@ -33,8 +35,10 @@ mymodal.controller('MainCtrl', function ($scope,$http,$log,myService,myFactory) 
     $scope.buttonClicked = "";
   $scope.view="page1";
   $scope.baseUrl=myFactory.getBaseUrl();
+  };
 
 
+$scope.initAll();
  if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position){
       $scope.$apply(function(){
@@ -51,6 +55,15 @@ $scope.venueShow= function(item){
   $scope.selectedVenu =item;
 
 };
+
+$scope.venuRattingChange =function(){
+  if($scope.selectedVenu.ratting<1){
+    $scope.selectedVenu.ratting=1;
+  }
+    if($scope.selectedVenu.ratting >10){
+    $scope.selectedVenu.ratting=10;
+  }
+}
 $scope.addCategory=function(id){
   var index=$scope.searchBy.category.indexOf(id);
   if($scope.searchBy.category.indexOf(id)!=-1){

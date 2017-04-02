@@ -5,10 +5,8 @@ body{
     margin-top: 20px;
 }
 
-.venuSection{
-
-  
-
+button{
+    margin-top:10px; 
 }
 .venue{
     border: 1px solid grey;
